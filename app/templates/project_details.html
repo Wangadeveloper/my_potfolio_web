@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="project-details">
+  <h1>{{ project.title }}</h1>
+  <img class="proj-hero" src="{{ url_for('static', filename=project.image) }}" alt="{{ project.title }}"/>
+  <p class="muted">{{ project.short }}</p>
+  <section>
+    <h2>About this project</h2>
+    <p>{{ project.details }}</p>
+  </section>
+  <p><a class="btn" href="{{ url_for('main.projects') }}">Back to projects</a></p>
+</article>
+{% endblock %}

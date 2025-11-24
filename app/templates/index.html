@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <h1>{{ intro.name }}</h1>
+  <p class="subtitle">{{ intro.title }} — {{ intro.location }}</p>
+  <p class="summary">{{ intro.summary }}</p>
+  <p class="ctas">
+    <a class="btn" href="{{ url_for('main.projects') }}">View Projects</a>
+    <a class="btn ghost" href="{{ url_for('main.contact') }}">Contact Me</a>
+  </p>
+</section>
+
+<section class="featured">
+  <h2>Featured Projects</h2>
+  <div class="project-grid">
+    {% for project in projects %}
+      <div class="project-card">
+        <!-- Click image → external live project -->
+        <a href="{{ project.link }}" target="_blank">
+          <img src="{{ url_for('static', filename=project.image) }}" alt="{{ project.title }}"/>
+        </a>
+
+        <h3>{{ project.title }}</h3>
+        <p class="muted">{{ project.short }}</p>
+
+        <!-- Optional: Still allow detailed view -->
+        <a href="{{ url_for('main.project_details', proj_id=project.id) }}" class="details-link">
+          View details →
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}

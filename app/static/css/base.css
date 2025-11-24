@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f3f3;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background: black;
+    padding: 15px 0;
+    width: 100%;
+}
+
+.nav-inner {
+    width: 85%;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between; /* LEFT + RIGHT */
+    align-items: center;
+}
+
+.brand {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #c9c9c9;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.container {
+    width: 80%;
+    margin: 30px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+/* ===== PROJECT CARDS ===== */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* ===== FORM ELEMENTS ===== */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+}
+
+.btn {
+    cursor: pointer;
+    background: black;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .nav-inner {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .brand {
+        font-size: 1.3rem;
+    }
+}

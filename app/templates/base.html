@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ title if title else 'Peter Wanga - Portfolio' }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a class="brand" href="{{ url_for('main.index') }}">Peter Wanga</a>
+      <div class="nav-links">
+        <a href="{{ url_for('main.about') }}">About</a>
+        <a href="{{ url_for('main.projects') }}">Projects</a>
+        <a href="{{ url_for('main.contact') }}">Contact</a>
+        <a href="{{ url_for('static', filename='docs/PETER_WANGA_OTIENO.pdf') }}" target="_blank">Download CV</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flashes">
+          {% for category, msg in messages %}
+            <div class="flash {{ category }}">{{ msg }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Peter Wanga • Kerugoya, Kenya</p>
+  </footer>
+</body>
+</html>
