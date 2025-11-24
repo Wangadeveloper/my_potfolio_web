@@ -2,7 +2,9 @@
 {% block content %}
 <article class="project-details">
   <h1>{{ project.title }}</h1>
-  <img class="proj-hero" src="{{ url_for('static', filename=project.image) }}" alt="{{ project.title }}"/>
+  <a href="{{ project.link }}" target="_blank">
+      <img class="proj-hero" src="{{ url_for('static', filename=project.image) }}" alt="{{ project.title }}"/>
+  </a>
   <p class="muted">{{ project.short }}</p>
   <section>
     <h2>About this project</h2>
