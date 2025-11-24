@@ -1,0 +1,12 @@
+# Exported from Render on 2025-11-24T09:51:39Z
+version: "1"
+services:
+- type: web
+  name: my_potfolio_web
+  runtime: python
+  repo: https://github.com/Wangadeveloper/my_potfolio_web
+  plan: free
+  region: frankfurt
+  buildCommand: pip install -r requirements.txt
+  startCommand: gunicorn "app:create_app()"
+  autoDeployTrigger: commit
